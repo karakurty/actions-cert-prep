@@ -36,5 +36,5 @@ jobs:
           echo test, and deploy your project.
 
       # Runs a single command using the runners shell to get all env variables sorted
-      - name: Run a one-line script
+      - name: Run a one-line script to get all env variables sorted
         run: env | sort
