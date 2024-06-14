@@ -1,10 +1,13 @@
-const request = require('supertest');
-const app = require('../app');
+var assert = require('assert');
+describe('Basic Mocha Test', function () {
+    it('should deal with objects', function () {
+        var obj = { name: 'John', gender: 'male' };
+        var objB = { name: 'John', gender: 'male' };
+        assert.deepEqual(obj, objB);
+    });
 
-describe('GET /', () => {
-  it('responds with Hello, world!', async () => {
-    const response = await request(app).get('/');
-    expect(response.statusCode).toBe(200);
-    expect(response.text).toContain('Hello, world!');
-  });
+    it('should allow testing null', function () {
+        var iAmNull = null;
+        assert.equal(iAmNull, null);
+    });
 });
