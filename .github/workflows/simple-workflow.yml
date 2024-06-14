@@ -38,3 +38,14 @@ jobs:
       # Runs a single command using the runners shell to get all env variables sorted
       - name: Run a one-line script to get all env variables sorted
         run: env | sort
+
+  # New job that depends on the completion of the "build" job
+  deploy:
+    # This job needs the "build" job to complete before it starts
+    needs: build
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      - name: Deploy to production
+        run: echo Deploying to production...
